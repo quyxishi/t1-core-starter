@@ -1,0 +1,49 @@
+spring:
+  application:
+    name: bishop-prototype
+  kafka:
+    bootstrap-servers: localhost:9092
+    producer:
+      key-serializer: org.apache.kafka.common.serialization.StringSerializer
+      value-serializer: org.springframework.kafka.support.serializer.JsonSerializer
+
+synth:
+  core:
+    audit:
+      mode: console
+
+management:
+  server:
+    port: 8082
+  endpoints:
+    web:
+      exposure:
+        include:
+          - health
+          - metrics
+          - prometheus
+          - env
+          - info
+          - heapdump
+          - threaddump
+  info:
+    java:
+      enabled: true
+    os:
+      enabled: true
+  metrics:
+    tags:
+      application: ${spring.application.name}
+  jmx:
+    metrics:
+      export:
+        enabled: false
+  prometheus:
+    metrics:
+      export:
+        enabled: true
+        step: 1m
+
+logging:
+  level:
+    "com.raii.synthetichumancorestarter": debug

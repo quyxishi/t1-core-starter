@@ -1,0 +1,4 @@
+rootProject.name = 't1-core-starter'
+
+include 'synthetic-human-core-starter'
+include 'bishop-prototype'
