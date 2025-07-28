@@ -1,5 +1,5 @@
 # core-starter
-> T1-debut task w/ basic starter + audit via kafka
+> T1-debut task w/ basic starter + audit via Kafka
 
 ## Getting Started
 ```shell
